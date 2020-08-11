@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+</head>
+<style>
+body {
+    background: url(currency.png) center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 0.9;
+}
+
+h2{
+    opacity: 0.9;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    
+} 
+
+marquee {
+    background: #ff0000;
+    font-size: 20px;
+    padding-top: 6px;
+    margin: -23px;
+    margin-left: 35%;
+    margin-right: 35%;
+    cursor: pointer;
+    border: rgb(0, 0, 0) solid;
+}
+
+fieldset {
+    width: 45%;
+    margin: auto;
+    border: 2px double rgb(233, 17, 17);
+    text-align: left;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
+
+input [type=number], [id] {
+    background: #FFF;
+    border: 1px solid #000;
+    border-radius: 2px;
+    border-width: 1px;
+    color: #36454b;
+    font-size: 15px;
+    margin: 5px;
+    padding: 12px;
+    display: inline-block;
+}
+
+input [type=button] {
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+}
+
+input [type=reset] {
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+}
+</style>
+
+<script>
+    function currencyConverter (valNum) {
+        if(converter.dollar.value <=0)
+        window.alert("Enter Value Greaterthan 0");
+        else {
+            document.getElementById("euro").value = (valNum/1.17700).toFixed(2);
+            document.getElementById("Pound").value = (valNum/1.30897).toFixed(2);
+            document.getElementById("Ruble").value = (valNum/0.0136954).toFixed(2);
+            document.getElementById("Yuan").value = (valNum/0.143955).toFixed(2);
+            document.getElementById("Riya").value = (valNum/0.266667).toFixed(2);
+            document.getElementById("CFA").value = (valNum/0.00179430).toFixed(2);
+        }
+    }
+</script>
+<body>
+ 
+<h2><marquee style="font-family: monospace;font-weight: bold;">Welcome to your Online Currency Converter</marquee></h2>
+
+<p>
+<form name="converter"> 
+    <fieldset>
+        <label>🇺🇸 USD (Dollars $): </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <input type="number" name="dollar" required>
+        
+        <input type="button" value="Convert" onclick="currencyConverter (converter.dollar.value)"><br><br>
+        <label>🇪🇺Euro (EUR €): </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="euro"><br><br>
+
+        <label>🇨🇳Chinese Yuan (YUAN ¥): </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="Yuan"><br><br>
+
+        <label>🇬🇧British Pound (GBP £) </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="Pound"><br><br>
+
+        <label>🇸🇦Riyal (Saudia ر.س): </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="Riya"><br><br>
+
+        <label>🇸🇳Franc CFA (XOF) : </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="CFA"><br><br>
+
+        <label>🇷🇺Russian Ruble (RUB ₽) :</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="Ruble"><br><br>
+
+        <center><input type="reset" value="Reset Form" style="text-align: center;"></center></p>
+
+        <p align="center">You can use the "Reset" button for resetting the form</p>
+
+    </fieldset>
+</form>
+</body>
+</html>
